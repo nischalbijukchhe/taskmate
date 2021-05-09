@@ -1,1 +1,1 @@
-web: gunicorn nischalapp.wsgi
+web: gunicorn taskmate.wsgi
