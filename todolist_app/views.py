@@ -37,7 +37,7 @@ def index(request): #take parameter called request so if we need any information
 @login_required
 def delete_task(request, task_id):
     task= TaskList.objects.get(pk=task_id)
-    if tase.manage == request.user:
+    if task.manage == request.user:
          task.delete()
     else:
         messages.error(request,("Access Restricted, You Are Not Allowed.")) 
@@ -47,7 +47,7 @@ def delete_task(request, task_id):
 @login_required
 def complete_task(request, task_id):
     task= TaskList.objects.get(pk=task_id)
-    if tase.manage == request.user:
+    if task.manage == request.user:
         task.done = True
         task.save()
     else:
